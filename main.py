@@ -1,6 +1,6 @@
-a = 0
 scores=[]
-while a >= 0:
-    a=int(input())
-    scores.append(a)
+score = int(input())
+while score >= 0:
+    scores.append(score)
+    score=int(input())
 print(sum(scores)/len(scores))
