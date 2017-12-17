@@ -22,6 +22,7 @@
     <Compile Include="get_score_list.py" />
     <Compile Include="get_tweet.py" />
     <Compile Include="main.py" />
+    <Compile Include="settings.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>
