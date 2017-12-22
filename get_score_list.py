@@ -1,2 +1,4 @@
 def get_score_list():
-    return [100]
+    import json
+
+    list = dict.values()
