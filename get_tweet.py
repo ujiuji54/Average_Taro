@@ -6,5 +6,5 @@ def get_tweet():
     auth.set_access_token(settings.ACCESS_TOKEN,settings.ACCESS_TOKEN_SECRET)
     api=tweepy.API(auth)
 
-    id="162076119531667457"
-    api.get_status(id)
+    id="942594709121200128"
+    return api.get_status(id).text
