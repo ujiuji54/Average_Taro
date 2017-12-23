@@ -1,4 +1,4 @@
-def get_score_list():
-    import json
-
-    list = dict.values()
+def get_score_list(tweet):  
+    list = tweet.splitlines()
+    print(list)
+    return list
