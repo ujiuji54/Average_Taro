@@ -6,5 +6,12 @@ def get_tweet():
     auth.set_access_token(settings.ACCESS_TOKEN,settings.ACCESS_TOKEN_SECRET)
     api=tweepy.API(auth)
 
-    id="942594709121200128"
-    return api.get_status(id).text
+    id = 0
+    tweetlist = []
+    word = "#あべれーじ太郎"
+    
+    for result in api.search(q = word,result_type='recent',count = 10):
+        if(result.id==id):break
+        tweetlist.append(result.id)
+        id=result.id
+    return tweetlist
