@@ -1,6 +1,5 @@
 from get_tweet import get_tweet
-from get_score_list import get_score_list
+from get_average import get_average
 
-scores=get_score_list()
+scores=get_average()
 get_tweet()
-print(sum(scores)/len(scores))
