@@ -11,12 +11,12 @@ def get_tweet():
     f.close()
 
     tweetlist = []
-    for result in api.search(q = '#あべれーじ太郎',result_type='recent',count = 10):
-        if(result.id==latest_tweet_id):break
+    for result in api.mentions_timeline(since_id=latest_tweet_id,count = 100):
         tweetlist.append(result.id)
 
     f = open('latest_id.txt', 'w')
-    f.write(str(tweetlist[0]))
+    if len(tweetlist) == 0 : f.write(latest_tweet_id)
+    else : f.write(str(tweetlist[0]))
     f.close()
 
     return tweetlist
