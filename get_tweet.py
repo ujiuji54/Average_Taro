@@ -6,12 +6,17 @@ def get_tweet():
     auth.set_access_token(settings.ACCESS_TOKEN,settings.ACCESS_TOKEN_SECRET)
     api=tweepy.API(auth)
 
-    id = 0
+    f = open('latest_id.txt', 'r')
+    latest_tweet_id = f.readline()
+    f.close()
+
     tweetlist = []
-    word = "#あべれーじ太郎"
-    
-    for result in api.search(q = word,result_type='recent',count = 10):
-        if(result.id==id):break
+    for result in api.search(q = '#あべれーじ太郎',result_type='recent',count = 10):
+        if(result.id==latest_tweet_id):break
         tweetlist.append(result.id)
-        id=result.id
+
+    f = open('latest_id.txt', 'w')
+    f.write(str(tweetlist[0]))
+    f.close()
+
     return tweetlist
