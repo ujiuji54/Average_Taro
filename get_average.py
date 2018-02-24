@@ -3,7 +3,10 @@ def get_average(tweet_text):
     tokenlist = tweet_text.split()
     for x in tokenlist:
         try:
-            scorelist.append(int(x))
+            scorelist.append(int(float(x)))
         except:
             pass
-    return sum(scorelist)/len(scorelist)
+    try:
+         return sum(scorelist)/len(scorelist)
+    except:
+         return "ダマレシネコロスゾ"

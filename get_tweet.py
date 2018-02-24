@@ -6,10 +6,10 @@ def get_tweet(api):
     f.close()
 
     try:
-        timeline = api.home_timeline(since_id=latest_tweet_id,exclude_replies=True)
+        timeline = api.home_timeline(count=100,since_id=latest_tweet_id,exclude_replies=True)
     except:
-        print("tweepy error home_timeline()")
-        exit()
+        print("api limit home_timeline()")
+        timeline = []
     tweetlist = []
 
     for tweet in reversed(timeline):
