@@ -9,5 +9,5 @@ auth.set_access_token(settings.ACCESS_TOKEN,settings.ACCESS_TOKEN_SECRET)
 api=tweepy.API(auth)
 
 while True:
-    for tweet_id in get_tweet():
-        reply(tweet_id,get_average(api.get_status(tweet_id).text))
+    for tweet_id in get_tweet(api):
+        reply(api,tweet_id,get_average(api.get_status(tweet_id).text))
