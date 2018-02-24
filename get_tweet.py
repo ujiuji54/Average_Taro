@@ -15,8 +15,11 @@ def get_tweet():
         tweetlist.append(result.id)
 
     f = open('latest_id.txt', 'w')
-    if len(tweetlist) == 0 : f.write(latest_tweet_id)
-    else : f.write(str(tweetlist[0]))
+    try:
+        f.write(str(tweetlist[0]))
+    except:
+        print("latest")
+        f.write(latest_tweet_id)
     f.close()
 
     return tweetlist
