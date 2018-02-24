@@ -12,4 +12,4 @@ api=tweepy.API(auth)
 while True:
     for tweet_id in get_tweet(api):
         reply(api,tweet_id,get_average(api.get_status(tweet_id).text))
-    time.sleep(15)
+    time.sleep(60)
